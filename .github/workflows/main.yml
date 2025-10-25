@@ -1,3 +1,4 @@
+
 name: Flutter Build APK
 
 on:
@@ -14,15 +15,12 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0' # or your Flutter version
-
-      - name: Go to project directory
-        run: cd ./lib
+          flutter-version: '3.24.0' # use your Flutter version
 
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Build APK
+      - name: Build release APK
         run: flutter build apk --release
 
       - name: Upload APK
